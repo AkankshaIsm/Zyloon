@@ -1,5 +1,6 @@
 package com.example.hp.movies.models;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import com.google.gson.annotations.Expose;
@@ -8,6 +9,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by hp on 19-04-2016.
  */
 
+//defining the pojo class
 
     public class MovieModel {
 
@@ -305,5 +307,34 @@ import com.google.gson.annotations.SerializedName;
         public void setVoteAverage(Float voteAverage) {
             this.voteAverage = voteAverage;
         }
+    //Comparators to sort the movies
+        public static Comparator<MovieModel> ratingComparator=new Comparator<MovieModel>() {
+            @Override
+            public int compare(MovieModel lhs, MovieModel rhs) {
+                Float a=lhs.getVoteAverage();
+                Float b=rhs.getVoteAverage();
+                return b.compareTo(a); //showing highest rated movies first
+
+            }
+        };
+    public static Comparator<MovieModel> titleComparator=new Comparator<MovieModel>() {
+        @Override
+        public int compare(MovieModel lhs, MovieModel rhs) {
+            String a=lhs.getTitle();
+            String b=rhs.getTitle();
+            return a.compareTo(b); //sorting by Name
+
+        }
+    };
+    public static Comparator<MovieModel> dateComparator=new Comparator<MovieModel>() {
+        @Override
+        public int compare(MovieModel lhs, MovieModel rhs) {
+            String a=lhs.getReleaseDate();
+            String b=rhs.getReleaseDate();
+            return b.compareTo(a); //show latest movies first
+
+        }
+    };
+
 
     }

@@ -14,7 +14,7 @@ import retrofit.http.GET;
 import retrofit.http.Path;
 
 public interface MovieAPI {
-    @GET("/popular?api_key=0877e1cdb4c40aedf0b8c398906658b0")
+    @GET("/popular?api_key=0877e1cdb4c40aedf0b8c398906658b0")   //returns Example type json object
     void getMovies(Callback<Example> response);
 
 }

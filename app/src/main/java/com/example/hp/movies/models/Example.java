@@ -9,6 +9,8 @@ import java.util.List;
 /**
  * Created by hp on 20-04-2016.
  */
+
+//defining the pojo class
 public class Example {
 
     @SerializedName("page")
