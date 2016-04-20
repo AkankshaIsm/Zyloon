@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private void getMovies()
     {
         //While the app fetched data we are displaying a progress dialog
-        final ProgressDialog loading = ProgressDialog.show(this, "Fetching Data", "Please wait...", false, false);
+        //final ProgressDialog loading = ProgressDialog.show(this, "Fetching Data", "Please wait...", false, false);
 
         //Creating a rest adapter
         RestAdapter adapter = new RestAdapter.Builder()
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
             @Override
             public void success(Example movieModels, Response response)
-            {   loading.dismiss();  //if successful in fetching the json, stop the progress dialog
+            {  // loading.dismiss();  //if successful in fetching the json, stop the progress dialog
                 movieModelList=movieModels.getResults(); //get movie model object
                 switch(pos)
                 {
